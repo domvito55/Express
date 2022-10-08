@@ -1,0 +1,244 @@
+/* General stuff */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: #C0C0C0;
+    background-color: #00000A;
+}
+
+#wrapper {
+    background-color: #3a050d;
+}
+
+h3{
+    margin-left: 0.2in;
+}
+
+p {
+    margin-left: 0.2in;
+    margin-right: 0.2in;
+    text-indent: 0.4in;
+}
+
+a:link {
+    color: #ead33f;
+    background-color: transparent;
+}
+
+a:visited {
+    color: #C0C0C0;
+    background-color: transparent;
+}
+
+a:hover {
+    color: red;
+    background-color: transparent;
+}
+
+ul {
+    list-style-image: url(../images/purplestar.gif);
+}
+
+/* header */
+header {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: #A9A9A9;
+}
+
+/* nav */
+nav {
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+}
+
+.sub{
+    font-size: 0.6em;
+    padding: 0;
+    margin: -0.6em;
+
+    text-indent: 0;
+    height: fit-content;
+    line-height: 0.65em;
+}
+
+nav ul {
+    list-style-image: none;
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background-color: #ead33f;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: medium;
+    font-weight: bold;
+    padding: 0.3em;
+    display: block;
+}
+
+nav a:link {
+    color: #FFF;
+}
+
+nav a:visited {
+    color: #FFF;
+}
+
+nav a:hover {
+    background-color: #ead33f;
+    color: #FFF;
+    margin: 0;
+}
+
+.current a {
+    background-color: #3a050d;
+    color: #FFF;
+}
+
+.current a:link {
+    background-color: #3a050d;
+    color: #FFF;
+}
+
+.current a:visited {
+    background-color:  #3a050d;
+    color: #FFF;
+}
+
+.current a:hover {
+    background-color:  #3a050d;
+    color: #FFF;
+}
+
+/* References */
+.reference {
+    text-indent: -4%;
+    padding-left: 4%;
+}
+
+
+/*################################### Middle screen ###################################*/
+@media (min-width: 650px) {
+    #wrapper {
+        width: 90%;
+        margin: auto;
+        max-width: 1200px;
+    }
+
+    header {
+        border-left: 2px solid #ead33f;
+        border-right: 2px solid #ead33f;
+        border-top: 2px solid #ead33f;
+        position: sticky;
+        top: 0;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        width: 33.333333333%;
+    }
+
+    .single {
+        line-height: 2.1em;
+        height: 100%;
+        font-size: large;
+    }
+
+    .current {
+        border-bottom: none;
+    }
+
+    .current a {
+        border: none
+    }
+
+    .current a:link {
+        border: none
+    }
+
+    .current a:visited {
+        border: none
+    }
+
+    .current a:hover {
+        border: none
+    }
+
+    main {
+        border-left: 2px solid #ead33f;
+        border-right: 2px solid #ead33f;
+        border-bottom: 2px solid #ead33f;
+    }
+
+}
+
+/*################################### Big screen ###################################*/
+@media (min-width: 1024px) {
+    #wrapper {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto;
+
+        width: 75%;
+        margin: auto;
+        max-width: 1200px;
+
+    }
+
+    header {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2
+    }
+
+    nav {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+    }
+
+    .single {
+        line-height: 1.7em;
+        height: 100%;
+        font-size: x-large;
+    }
+
+    nav a {
+        font-size: larger;
+    }
+
+    main {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
+
+    footer {
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+    }
+}

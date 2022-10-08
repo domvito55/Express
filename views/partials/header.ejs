@@ -1,0 +1,57 @@
+<!--Student Name: Matheus Teixeira - Student ID: 301236904-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Comp 213</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./images/MT_.jpg" type="image/x-icon"/>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+          <nav>
+            <ul>
+              <img src="./images/Nerdman25.png" alt="logo" style="float: left; height: 56px; margin: 0;padding: 0;">
+              <% if (title == "Home") { %>
+                <li class="current">
+              <% } else { %>
+                <li>
+              <% } %>
+                <a class="single" href="/">Home</a>
+              </li>
+
+              <% if (title == "About") { %>
+                <li class="current">
+              <% } else { %>
+                <li>
+              <% } %>
+                <a class="single" href="/about">About me</a>
+              </li>
+
+              <% if (title == "ListProjects") { %>
+                <li class="current">
+              <% } else { %>
+                <li>
+              <% } %>
+                <a class="single" href="/projects">Projects</a>
+              </li>
+
+              <% if (title == "ListServices") { %>
+                <li class="current">
+              <% } else { %>
+                <li>
+              <% } %>
+                <a class="single" href="/services">Services</a>
+              </li>
+
+              <% if (title == "Contact") { %>
+                <li class="current">
+              <% } else { %>
+                <li>
+              <% } %>
+                <a class="single" href="/contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
