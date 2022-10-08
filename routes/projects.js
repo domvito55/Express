@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
+/* GET List of Projects. */
 router.get('/', function(req, res, next) {
-  res.render('simple', { title: 'Home' });
+  res.render('list', { title: 'ListProjects' });
 });
+
+/* GET Each Project. */
 
 module.exports = router;
