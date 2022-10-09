@@ -1,3 +1,9 @@
+/* File name     : main.css
+** Student's name: Matheus Teixeira
+** Student's ID  : 301236904
+** Date          : October 08, 2022
+ */
+
 /* General stuff */
 * {
     box-sizing: border-box;
@@ -26,7 +32,7 @@ h2 {
     text-shadow: 0px 0px 5px #7ad3fb;
 }
   
-h3{
+h3, h4, h5{
     color:#fefffd;
     text-shadow: 0px 0px 5px #7ad3fb;
 }
@@ -40,6 +46,13 @@ p {
     text-indent: 0.4in;
 }
 
+a{
+    color:#fff;
+}
+
+a:visited{
+    color:#fbeb69;
+}
 /* header */
 header {
     text-align: center;
@@ -149,7 +162,7 @@ input{
     width:97%;
 }
 
-button {
+.button {
     text-align: center;
     background-image: linear-gradient(#fbeb69,#e2ac0c,#af7801,#4e361a);
     color:#fefffd;
@@ -160,9 +173,29 @@ button {
     margin: 10px 5px;
     padding: 5px 10px;
     position: relative;
-    width: 10em;
     border-radius: 20px;
     border-color:#fff;
+}
+
+.buttonDiv{
+    text-align: center;
+}
+
+/*validation*/
+input:invalid{
+    border: #7310E7 5px groove;
+}
+
+input[type=text]:valid, input[type=email]:valid, input[type=password]:valid{
+    border: none;
+}
+
+select:invalid{
+    border: #7310E7 5px groove;
+}
+
+select:valid{
+    border: none;
 }
 
 

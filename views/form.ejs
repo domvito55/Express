@@ -1,62 +1,69 @@
+<!--Student Name: Matheus Teixeira - Student ID: 301236904
+----Template to be used with forms. The only needed form until now is the
+----contact form.
+-->
 <% include partials/header.ejs %>
 <main>
-    <form action="mailto:mferre39@my.centennialcollege.ca" method="post">
+    <br>
+    <form>
         <fieldset>
-            <legend>Personal Info</legend>
-            <p>
-                <label for="firstName">First Name: &nbsp;</label>
-                <input type="text" name="firstName" id="firstName"  tabindex="5"/>
-            </p>
-            <p>
-                <label for="lastName">Last Name: &nbsp;</label>
-                <input type="text" name="lastName" id="lastName"  tabindex="10"/>
-            </p>
-            <p>
-                <label for="phone">Telephone Number: &nbsp;</label>
-                <input type="text" name="phone" id="phone"  tabindex="15"/>
-            </p>
-            <p>
-                <label for="email">Best e-mail: &nbsp;</label>
-                <input type="text" name="email" id="email"  tabindex="20"/>
-            </p>
+            <legend>Client info and message</legend>
+            <div>
+                <div>
+                    <label for="firstName">First Name: &nbsp;</label>
+                    <input type="text" name="firstName" id="firstName" autofocus
+                        placeholder = "First Name" maxlength="16"
+                        title="This is a required field.&#10;It can contain up to 16 characteres."
+                        tabindex="5"
+                    />
+                </div>
+                <div>
+                    <label for="lastName">Last Name: &nbsp;</label>
+                    <input type="text" name="lastName" id="lastName"
+                        placeholder="Last Name" maxlength="31"
+                        title="This is a required field.&#10;It can contain up to 31 characteres."
+                        tabindex="10"
+                    />
+                </div>
+                <div>
+                    <label for="cellNumber">Telephone: &nbsp;</label>
+                    <input type="text" name="cellNumber" id="cellNumber"
+                        placeholder="555-555-5555" maxlength="12"
+                        title="This is a required field.&#10;It can contain up to 12 characteres."
+                        tabindex="15"
+                    />
+                </div>
+                <div>
+                    <label for="email">E-mail: &nbsp;</label>
+                    <input type="email" name="email" id="email"
+                        placeholder="username@provider.ca" minlength="6" maxlength="254"
+                        title="This is a required field.&#10;a)It must start with some of valid caracteres (letter, number, -, or _)&#10;b) be followed by @&#10;c) then some valid caracteres&#10;d) be followed by a single dot (.)&#10;d) end with a valid top level domain"
+                        tabindex="50"
+                    />
+                </div>
+                <div>
+                    <br>
+                    <h3>What do you need today?</h3>
+                    <br>
+                    <textarea id="message" name="message" rows="5" tabindex="55"
+                    placeholder=""
+                    style="width: 100%;">
+                    </textarea>
+                </div>
+            </div>
+            <div class="buttonDiv">
+                <input class="button" type="submit" name="submit" id="submit" value="Send" tabindex="55">
+                <input class="button" type="reset" name="clear" id="clear" value="Clear" tabindex="60">
+            </div>
         </fieldset>
-        <fieldset>
-            <legend>Property Info</legend>
-            <p class="radioButton">
-                <label for="typeOfProperty">Type of property: &nbsp;</label>
-                <span>
-                    <input type="radio" name="typeOfProperty" value="house"  tabindex="25"/>House &nbsp;
-                    <input type="radio" name="typeOfProperty" value="condominium"  tabindex="30"/>Condominium &nbsp;
-                    <input type="radio" name="typeOfProperty" value="Other"  tabindex="35"/>Other
-                </span>
-            </p>
-            <p class="spin">
-                <label for="bedrooms">Number of bedrooms : &nbsp;</label>
-                <input type="number"  name="bedrooms"  id="bedrooms" min="0" max="30" value="1"  tabindex="40"> 
-            </p>
-            <p class="spin">
-                <label for="bathrooms">Number of bathrooms: &nbsp;</label>
-                <input type="number"  name="bathrooms"  id="bathrooms" min="0" max="30" value="1"  tabindex="45"> 
-            </p>
-            <p class="price">
-                <label for="bedrooms">Minimum price : &nbsp;</label>
-                <input type="number"  name="bedrooms"  id="bedrooms" min="0" max="9999999" value="1"  tabindex="50"> 
-            </p>
-            <p class="price">
-                <label for="bathrooms">Maximum price: &nbsp;</label>
-                <input type="number"  name="bathrooms"  id="bathrooms" min="0" max="9999999" value="1"  tabindex="55"> 
-            </p>
+        <fieldset style="text-align: left;">
+            <legend>Other ways to reach me</legend>
+            Email: mferre77@my.centennialcollege.ca <br>
+            Telephone: (647) 512 5000 <br>
+            LinkedIn: https://www.linkedin.com/in/mathteixeira/
         </fieldset>
-        <fieldset>
-            <legend>Any other comments</legend>
-            <textarea id="txtOther" name="txtOther" rows="5" tabindex="60"
-            placeholder="There is any other thing that you want to let us know?"
-            style="width: 100%;"></textarea>
-        </fieldset>
-        <p>
-            <input name="btnSubmit" tabindex="35" type="submit" value="Submit" class="button">
-            <input name="btnReset" tabindex="37" type="reset" value="Clear Form" class="button">
-        </p>
+        <br/>
     </form>
 </main>
+
 <% include partials/footer.ejs %>
