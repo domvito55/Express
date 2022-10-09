@@ -1,102 +1,84 @@
+<!--Student Name: Matheus Teixeira - Student ID: 301236904
+----Template to be used either by the projects list, or services list
+-->
 <% include partials/header.ejs %>
-<div id="main">
-    <table width="100%">
-        <caption><h2>Personal Computers</h2></caption>
-        <thead>
-            <tr>
-                <th>Picture</th>
-                <th>Description</th>
-                <th>Find a local distributor</th>
-            </tr>
-        </thead>
-        <tbody>	
-            <tr>
-                <td>
-                    <img alt="Inspiron 14&quot; 2 in 1 laptop (5410)"
-                    src="../images/InspironThumb.png" style="margin-top: 65px;">
-                    <br/>
-                    <a href="./Details.html">Details</a>
-                </td>
-                <td width="40%">
-                    <h4>Dell Inspiron 14&quot; (5410)</h4>
-                    <p>
-                        Do you need a new computer for either accessing the Internet,
-                        writing documents, or playing silly games? Consider buying one of the many
-                        versions of the Dell Inspiron 14&quot;.
-                    </p>
-                    <h4>Versions</h4>
-                    <p>
-                        If you just need a personal computer for day-to-day use, the version in
-                        conventional laptop format with Intel® Core™ i3 should be enough for you.
-                        If you are a student, you may consider buying a 2-in-1 format so you can
-                        use it as a computer and take class notes using a stylus. You can save some
-                        money buying the version with Core™ i5, 8 GB of RAM, and 256 GB SSD.
-                        But with <strong>only $50.00 more,</strong> you can buy a much more powerful
-                        machine with i7, 12 GB of RAM, and 512 GB SSD.                            </p>
-                    <h4>Features</h4>
-                    <ul>
-                        <li>Windows 11</li>
-                        <li>3 USB ports and 1 HDMI Port</li>
-                        <li>Intagrated 720p camera</li>
-                        <li>Intagrated Wi-fi, and Bluetooth 5.1</li>
-                    </ul>
-                    <table style="width: 100%" cellpadding="3" cellspacing="0" class="price">
-                        <tr class="oddRow">
-                            <th>Some versions available</th>
-                            <th>Price</th>
-                        </tr>
-                        <tr class="evenRow">
-                            <td>Convetional Laptop (with i3)</td>
-                            <td>$649.99</td>
-                        </tr>
-                        <tr class="oddRow">
-                            <td>Laptop 2-in-1 (with i5)</td>
-                            <td>$999.99</td>
-                        </tr>
-                        <tr class="evenRow">
-                            <td>Laptop 2-in-1 (with i7)</td>
-                            <td>$1049.99</td>
-                        </tr>
-                    </table>
-                </td>
-                <td width="40%">
-                    <map name="image-map" id="image-map">
-                        <area alt="Manitoba" title="Manitoba"
-                        href="https://stores.bestbuy.ca/en-ca/mb/winnipeg/1580-regent-ave-w-unit-10"
-                        coords="151,192,146,268,175,270,174,244,198,214,190,210,185,213,182,201,175,
-                        200,175,193" shape="poly">
-
-                        <area alt="Ontario" title="Ontario"
-                        href="https://stores.bestbuy.ca/en-ca/on/toronto/65-dundas-st-w"
-                        coords="176,270,185,272,192,276,201,276,207,269,215,270,220,274,231,285,242,
-                        289,244,305,240,314,255,308,259,302,259,296,268,293,276,283,276,277,268,281,
-                        252,275,244,245,229,235,226,227,227,221,216,222,205,219,198,214,175,243"
-                         shape="poly">
-                        
-                         <area alt="Quebec" title="Quebec"
-                         href="https://stores.bestbuy.ca/en-ca/qc/montreal/470-rue-ste-catherine-o"
-                         coords="277,282,291,277,296,271,297,258,300,250,315,239,324,230,326,220,328,
-                         210,333,203,328,201,307,214,304,219,294,214,284,208,285,202,297,200,295,194,
-                         288,181,283,179,283,173,276,166,276,178,274,184,268,181,259,168,251,169,244,
-                         164,239,168,232,167,233,176,236,185,235,193,242,200,245,209,242,218,238,222,
-                         246,238,246,245,252,273" shape="poly">
-                    </map>
-                    <img alt="Canada Provinces &amp; Territories Latin"
-                    src="../images/canadaMap.png" usemap="#image-map" width="100%">
-                    <br/>
-                    <small>                            
-                        <a title="Killer the Feline, CC BY-SA 4.0
-                        &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons"
-                        href="https://commons.wikimedia.org/wiki/File:Canada_Provinces_%26_Territories_Latin.png">
-                            Creative Commons Attribution-Share Alike 4.0 International
+<main>
+    <table>
+        <caption><h2><%= caption %></h2></caption>
+        <tr>
+            <td style="vertical-align: middle; text-align: center;"  width="50%">
+                <br>
+                <a href=<%= img2_ref %>>
+                    <img alt=<%= img2_alt %> src=<%= img2_src %> width="100%">
+                </a>
+                <% if (title == "ListProjects") { %>
+                <br><br><br>
+                <a href="http://studentweb.cencol.ca/mferre39/Comp125/Assignment5/assignment5.html">
+                    <img alt="Simple Game" src="/images/Slap.png" width="100%">
+                </a>
+                <% } %>
+                <br>
+            </td>
+            <td>
+                <h4><%= row2_title %></h4>
+                <p><%= row2_desc %> <a href=<%= img2_ref %>><%= link %></a></p>
+                <% if (title == "ListProjects") { %>
+                    <h4>What to check?</h4>
+                    <p> One of the funniest projects that I have made was a simple game.
+                        To score, you need to slap my JavaScript professor's face.
+                        Every time you hit him, he tries to hide faster, so the game becomes harder.
+                        <a href="http://studentweb.cencol.ca/mferre39/Comp125/Assignment5/assignment5.html">
+                            Game.
                         </a>
-                    <br/><br/>
-                    Clicking on the map you can reach a local distributor in Manitoba, Ontario,
-                    or Quebec.
-                    </small>
+                    </p>
+                <% } %>
+            </td>
+        </tr>
+        <tr>
+                <td style="vertical-align: middle; text-align: center;"  width="50%">
+                    <br>
+                    <a href=<%= img1_ref %>>
+                        <img alt=<%= img1_alt %> src=<%= img1_src %> width="100%">
+                    </a>
+                    <% if (title == "ListProjects") { %>
+                    <br><br><br>
+                    <a href="http://studentweb.cencol.ca/mferre39/Comp213/IndividualProject/index.html">
+                        <img alt="COMP 213 Final Project" src="/images/HTML_Final.png" width="100%">
+                    </a>
+                    <% } %>
+                    <br>
+                </td>
+                <td>
+                    <h4><%= row1_title %></h4>
+                    <p><%= row1_desc %> <a href=<%= img1_ref %>><%= link %></a></p>
+                    <% if (title == "ListProjects") { %>
+                        <h4>What to check?</h4>
+                        <p> The final project for that course was a Complete Responsive
+                            Website for an imaginary realtor. That website should have at least 7 pages,
+                            a light color scheme, a form, and a sitemap. The website has 3 different
+                            views, and looks great on a cellphone, on a tablet, or on a bigger screen.
+                            <a href="http://studentweb.cencol.ca/mferre39/Comp213/IndividualProject/index.html">
+                                Final Project.
+                            </a>
+                        </p>
+                    <% } %>
                 </td>
             </tr>
-        </tbody>
+            <% if (title == "ListProjects") { %>
+                <tr>
+                    <td style="vertical-align: middle; text-align: center;"  width="50%">
+                        <br>
+                        <a href=<%= img0_ref %>>
+                            <img alt=<%= img0_alt %> src=<%= img0_src %> width="100%">
+                        </a>
+                        <br>
+                    </td>
+                    <td>
+                        <h4><%= row0_title %></h4>
+                        <p><%= row0_desc %> <a href=<%= img0_ref %>>GitHub.</a></p>
+                    </td>
+                </tr>
+            <% } %>
     </table>
-</div>
+<main>
 <% include partials/footer.ejs %>
