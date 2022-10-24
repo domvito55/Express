@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
     ' the navigation bar. It also holds a link to a newer website that collects' +
     ' not only the first-semester assignments but also the second-semester' +
     ' assignments.',
-    img0_ref: 'https://github.com/domvito55/SnakeGame',
+    img0_ref: 'https://github.com/domvito55/C_projects/tree/main/Snake',
     img0_alt: 'Snake game',
     img0_src:'/images/Snake.png',
     row0_title: 'Snake Game Project',
