@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-let inventoryController = require('../controllers/inventory.controller');
+let businesslistController = require('../controllers/businesslist.controller');
 
 // helper function for guard purposes
 function requireAuth(req, res, next)
@@ -17,23 +17,23 @@ function requireAuth(req, res, next)
 
 // === CREATE === //
 // GET Route for displaying the Add page - view
-router.get('/add', requireAuth, inventoryController.displayAddPage);
+router.get('/add', requireAuth, businesslistController.displayAddPage);
 // POST Route for processing the Add page - ADD/INSERT (post) - submit button
-router.post('/add', requireAuth, inventoryController.processAddPage);
+router.post('/add', requireAuth, businesslistController.processAddPage);
 
 // === READ === //
 // GET Route for displaying the list - SELECT/FIND (get) - view
-router.get('/list', inventoryController.inventoryList);
+router.get('/list', businesslistController.businesslistList);
 
 // === UPDATE === //
 // GET Route for displaying the edit page - view
-router.get('/edit/:id', requireAuth, inventoryController.displayEditPage);
+router.get('/edit/:id', requireAuth, businesslistController.displayEditPage);
 // PUT Route for processing the edit page - UPDATE (put) - submit button
-router.post('/edit/:id', requireAuth, inventoryController.processEditPage);
+router.post('/edit/:id', requireAuth, businesslistController.processEditPage);
 
 // === DELETE === //
 // DELETE Route for processing the delete operation - DELETE/REMOVE (delete) - submit button
-router.get('/delete/:id', requireAuth, inventoryController.performDelete);
+router.get('/delete/:id', requireAuth, businesslistController.performDelete);
 
 
 module.exports = router;

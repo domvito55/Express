@@ -1,13 +1,13 @@
 // create a reference to the model
-let InventoryModel = require('../models/inventory.model');
+let businesslistModel = require('../models/businesslist.model');
 
 // === CREATE === //
 module.exports.displayAddPage = (req, res, next) => {
 
-    let newItem = InventoryModel();
+    let newItem = businesslistModel();
 
-    res.render('inventory/add_edit', {
-        title: 'Add a new Item',
+    res.render('businesslist/add_edit', {
+        title: 'Add a new contact',
         item: newItem,
         userName: req.user ? req.user.username : ''
     })          
@@ -16,20 +16,14 @@ module.exports.displayAddPage = (req, res, next) => {
 
 module.exports.processAddPage = (req, res, next) => {
 
-    let newItem = InventoryModel({
+    let newItem = businesslistModel({
         _id: req.body.id,
-        item: req.body.item,
-        qty: req.body.qty,
-        status: req.body.status,
-        size : {
-            h: req.body.size_h,
-            w: req.body.size_w,
-            uom: req.body.size_uom,
-        },
-        tags: req.body.tags.split(",").map(word => word.trim())
+        name: req.body.name,
+        number: req.body.number,
+        email: req.body.email
     });
 
-    InventoryModel.create(newItem, (err, item) =>{
+    businesslistModel.create(newItem, (err, item) =>{
         if(err)
         {
             console.log(err);
@@ -39,29 +33,29 @@ module.exports.processAddPage = (req, res, next) => {
         {
             // refresh the book list
             console.log(item);
-            res.redirect('/inventory/list');
+            res.redirect('/businesslist/list');
         }
     });
 }
 
 
 // === READ === //
-module.exports.inventoryList = function(req, res, next) {  
-    InventoryModel.find((err, inventoryList) => {
-        //console.log(inventoryList);
+module.exports.businesslistList = function(req, res, next) {  
+    businesslistModel.find((err, businesslistList) => {
+        //console.log(businesslistList);
         if(err)
         {
             return console.error(err);
         }
         else
         {
-            res.render('inventory/list', {
-                title: 'Inventory List', 
-                InventoryList: inventoryList,
+            res.render('businesslist/list', {
+                title: 'businesslist List', 
+                businesslistList: businesslistList,
                 userName: req.user ? req.user.username : ''
             })            
         }
-    });
+    }).sort({"name":1});
 }
 
 // === UPDATE === //
@@ -69,7 +63,7 @@ module.exports.displayEditPage = (req, res, next) => {
     
     let id = req.params.id;
 
-    InventoryModel.findById(id, (err, itemToEdit) => {
+    businesslistModel.findById(id, (err, itemToEdit) => {
         if(err)
         {
             console.log(err);
@@ -78,7 +72,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('inventory/add_edit', {
+            res.render('businesslist/add_edit', {
                 title: 'Edit Item', 
                 item: itemToEdit,
                 userName: req.user ? req.user.username : ''
@@ -91,20 +85,14 @@ module.exports.processEditPage = (req, res, next) => {
 
     let id = req.params.id
 
-    let updatedItem = InventoryModel({
+    let updatedItem = businesslistModel({
         _id: req.body.id,
-        item: req.body.item,
-        qty: req.body.qty,
-        status: req.body.status,
-        size : {
-            h: req.body.size_h,
-            w: req.body.size_w,
-            uom: req.body.size_uom,
-        },
-        tags: req.body.tags.split(",").map(word => word.trim())
+        name: req.body.name,
+        number: req.body.number,
+        email: req.body.email
     });
 
-    InventoryModel.updateOne({_id: id}, updatedItem, (err) => {
+    businesslistModel.updateOne({_id: id}, updatedItem, (err) => {
         if(err)
         {
             console.log(err);
@@ -114,7 +102,7 @@ module.exports.processEditPage = (req, res, next) => {
         {
             // console.log(req.body);
             // refresh the book list
-            res.redirect('/inventory/list');
+            res.redirect('/businesslist/list');
         }
     });
 }
@@ -124,7 +112,7 @@ module.exports.performDelete = (req, res, next) => {
 
     let id = req.params.id;
 
-    InventoryModel.remove({_id: id}, (err) => {
+    businesslistModel.remove({_id: id}, (err) => {
         if(err)
         {
             console.log(err);
@@ -133,7 +121,7 @@ module.exports.performDelete = (req, res, next) => {
         else
         {
             // refresh the book list
-            res.redirect('/inventory/list');
+            res.redirect('/businesslist/list');
         }
     });
 }

@@ -1,11 +1,12 @@
-// Student ID: 1234568796
-// Name: Julio Vinicius
-// Data: Oct 01, 2022
-
+// file: appclient.js
+// Student ID: 301236904
+// Name: Matheus Teixeira
+// Autor: Julio Vinicius
+// Data: Oct 29, 2022
 
 console.log("it goes to the client-side.");
 
-if(getTitle == "Inventory List")
+if((getTitle == "businesslist List")||(getTitle == "Edit Item"))
 {
     let deleteButtons = document.querySelectorAll('.btn-danger');
         
