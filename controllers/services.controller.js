@@ -28,6 +28,7 @@ exports.services = function(req, res, next) {
       row2_title: 'Web design and development',
       row2_desc: 'I can design a complete responsive websites and web applications,' +
       ' using all the modern best practices.' +
-      ' I can develop the front-end, the back-end side, design, and manage databases.'
+      ' I can develop the front-end, the back-end side, design, and manage databases.',
+      userName: req.user ? req.user.username : ''
     });
   }

@@ -3,11 +3,12 @@
 /**
  * Module dependencies.
  */
-
 var dbConfig = require("./config/db")
 var app = require('./config/app');
 var debug = require('debug')('app:server');
 var http = require('http');
+const configurePassport = require('./config/passport'); //authentication
+
 
 
 var db = dbConfig();
@@ -26,7 +27,7 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
+const passport = configurePassport();
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);

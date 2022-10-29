@@ -1,4 +1,4 @@
-let atlasDB = "mongodb+srv://nerdman:bananaboat@nerdman55.odsto9s.mongodb.net/products?retryWrites=true&w=majority";
+let atlasDB = "mongodb+srv://nerdman:bananaboat@nerdman55.odsto9s.mongodb.net/nerdman?retryWrites=true&w=majority";
 
 let mongoose = require('mongoose');
 

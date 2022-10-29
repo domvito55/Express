@@ -35,6 +35,7 @@ exports.projects = function(req, res, next) {
       ' During my bachelor I\' made a version of this game using C language in a Linux environment' +
       ' you can find the code on my GitHub repository. I have recently compiled the game under' +
       ' my machine, so, if you have a Windows 10 or Windows 11, you may be able to run the executable' +
-      ' available there and have fun'
+      ' available there and have fun',
+      userName: req.user ? req.user.username : ''
     });
   }
