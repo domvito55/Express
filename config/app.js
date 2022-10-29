@@ -18,8 +18,10 @@ var servicesRouter = require('../routes/services');
 var businesslistRouter = require('../routes/businesslist');
 var usersRouter = require('../routes/users');
 
+// === creating express framework === //
 var app = express();
 
+//middleware to keep the user session in the app
 app.use(session({
   saveUninitialized: true,
   resave: true,
@@ -40,12 +42,13 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../node_modules')));
 
 // Sets up passport
+// flash to handle error messages
+// passaport to handle authentication strategies
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-/** ___Using routes___ */
+// registering routers middleware
 app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/contact', contactRouter);
