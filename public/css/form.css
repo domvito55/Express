@@ -6,3 +6,12 @@
  .button {
     width: 10em;
 }
+
+label {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    width: 160px;
+    float: left;
+    text-align: right;
+  }
