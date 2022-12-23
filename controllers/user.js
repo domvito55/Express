@@ -46,14 +46,18 @@ module.exports.signup = function(req, res, next) {
   if (!req.user && req.body.password === req.body.password_confirm) {
     console.log(req.body);
 
+    //Assign whatever is in the body request to the fields with the
+    //same name on the user model.
     let user = new User(req.body);
     user.provider = 'local';
     console.log(user);
 
+    //mongoose method?
     user.save((err) => {
       if (err) {
         let message = getErrorMessage(err);
 
+        //assign the message to flash error field.
         req.flash('error', message);
         // return res.redirect('/users/signup');
         return res.render('auth/signup', {
@@ -62,6 +66,8 @@ module.exports.signup = function(req, res, next) {
           user: user
         });
       }
+
+      //login is from passaport
       req.login(user, (err) => {
         if (err) return next(err);
           return res.redirect('/');

@@ -7,6 +7,7 @@ let businesslistController = require('../controllers/businesslist.controller');
 function requireAuth(req, res, next)
 {
     // check if the user is logged in
+    // isAuthenticated is from passaport
     if(!req.isAuthenticated())
     {
         req.session.url = req.originalUrl;
